@@ -6,279 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lingua Barno</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            overflow-x: hidden;
-        }
-
-        body {
-            background-color: #ECE8E5;
-        }
-
-        .container {
-            max-width: 440px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 10px;
-            padding-top: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: sans-serif;
-            background-image: url(./images/bg.avif);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-
-        .containers {
-            max-width: 440px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 10px;
-            padding-top: 27px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .header {
-            padding-top: 15px;
-            padding-bottom: 10px;
-        }
-
-        .header__box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .header__text {
-            font-family: "SF Pro", sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 100%;
-            text-align: center;
-        }
-
-        .title {
-            font-family: Kuunari, sans-serif;
-            font-weight: 900;
-            font-size: clamp(46px, 14vw, 54px);
-            line-height: 100%;
-            text-align: center;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-            font-style: italic;
-        }
-
-        .text {
-            font-family: Inter, sans-serif;
-            font-weight: 500;
-            font-size: clamp(16px, 5vw, 18px);
-            line-height: 120%;
-            text-align: center;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .center {
-            position: relative;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .expert__img {
-            object-fit: contain;
-            max-width: 240px;
-            width: 100%;
-            height: auto;
-            margin-bottom: -10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .speaker__gradient {
-            background-color: #9E7665B2;
-            filter: blur(100px);
-            max-width: 207px;
-            width: 100%;
-            min-height: 193px;
-            position: absolute;
-            top: 280px;
-        }
-
-        .event__btn {
-            cursor: pointer;
-            max-width: 301px;
-            text-decoration: none;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            background-color: transparent;
-            position: relative;
-            background: linear-gradient(90deg, #FFE9C8 0%, #FFD9AD 27%, #FFDDB5 51%, #FFDDB5 75%, #FFCC8F 100%);
-            box-shadow: 0px 4px 0px 0px #B69369;
-            border-radius: 100px;
-            padding: 25px 0;
-            height: 72px;
-            z-index: 20;
-            font-family: Caros, sans-serif;
-            color: #885518;
-            font-weight: 600;
-            font-size: 18px;
-            line-height: 21px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .event__box {
-            display: flex;
-            align-items: end;
-            justify-content: end;
-            gap: 1px;
-            margin-bottom: 21px;
-            color: #C0C0C0;
-        }
-
-        .event__box p {
-            font-family: Inter, sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 130%;
-            text-align: center;
-        }
-
-        .event__box img {
-            object-fit: contain;
-        }
-
-        .event__list__title {
-            text-align: center;
-            font-family: Kuunari, sans-serif;
-            font-weight: 700;
-            font-size: clamp(29px, 9vw, 32px);
-            line-height: 130%;
-            text-align: center;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            color: black;
-        }
-
-        .event__list__title span {
-            background: linear-gradient(90deg, #EC2424 0%, #A40000 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .event__list {
-            max-width: 335px;
-            width: 100%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            margin-bottom: 20px;
-        }
-
-        .event__list__item {
-            border: 1.5px solid #A40000;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            gap: 16px;
-            padding: 9px 0 9px 0;
-            background-color: white;
-            position: relative;
-
-        }
-
-        .event__list__box {
-            position: absolute;
-            background-color: white;
-            border-radius: 100px;
-            top: 0px;
-            left: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 3px;
-            overflow: hidden;
-
-        }
-
-        .event__list__boxs {
-            position: absolute;
-            background-color: white;
-            border-radius: 100px;
-            bottom: -2px;
-            left: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 3px;
-        }
-
-        .event__list__boxs p {
-            font-size: 12px;
-        }
-
-        .event__list__item__number {
-            background: radial-gradient(50% 50% at 50% 50%, #DA2C2C 0%, #A40000 100%);
-            border-radius: 15px;
-            margin-left: -8px;
-            max-width: 69px;
-            width: 100%;
-            padding: 15px 19px 14px;
-        }
-
-        .event__list__item__number span {
-            font-family: "Big Shoulders Display", sans-serif;
-            font-weight: 700;
-            font-size: 42px;
-            line-height: 100%;
-            text-align: center;
-            text-transform: uppercase;
-            background: linear-gradient(131.77deg, #FFFFFF 27.92%, #B7B7B7 186.56%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .event__list__item__text {
-            font-family: Poppins, sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 140%;
-        }
-
-        .event__list__item__text span {
-            font-weight: 600;
-        }
-
-        .event__list__img {
-            position: absolute;
-            right: -15px;
-            top: -15px;
-            z-index: 30;
-        }
+* {margin: 0;padding: 0;box-sizing: border-box;}html, body {overflow-x: hidden;}body {background-color: #ECE8E5;}.container {max-width: 440px;width: 100%;margin: 0 auto;padding: 0 10px;padding-top: 0;display: flex;flex-direction: column;align-items: center;font-family: sans-serif;background-image: url(./images/bg.avif);background-repeat: no-repeat;background-size: cover;background-position: center;color: white;}.containers {max-width: 440px;width: 100%;margin: 0 auto;padding: 0 10px;padding-top: 27px;display: flex;flex-direction: column;align-items: center;}.header {padding-top: 15px;padding-bottom: 10px;}.header__box {display: flex;align-items: center;justify-content: center;gap: 5px;}.header__text {font-family: "SF Pro", sans-serif;font-weight: 400;font-size: 16px;line-height: 100%;text-align: center;}.title {font-family: Kuunari, sans-serif;font-weight: 900;font-size: clamp(46px, 14vw, 54px);line-height: 100%;text-align: center;text-transform: uppercase;margin-bottom: 6px;font-style: italic;}.text {font-family: Inter, sans-serif;font-weight: 500;font-size: clamp(16px, 5vw, 18px);line-height: 120%;text-align: center;margin-bottom: 20px;position: relative;z-index: 2;}.center {position: relative;width: 100%;display: flex;align-items: center;justify-content: center;}.expert__img {object-fit: contain;max-width: 240px;width: 100%;height: auto;margin-bottom: -10px;position: relative;z-index: 1;}.speaker__gradient {background-color: #9E7665B2;filter: blur(100px);max-width: 207px;width: 100%;min-height: 193px;position: absolute;top: 280px;}.event__btn {cursor: pointer;max-width: 301px;text-decoration: none;width: 100%;display: flex;align-items: center;justify-content: center;border: none;background-color: transparent;position: relative;background: linear-gradient(90deg, #FFE9C8 0%, #FFD9AD 27%, #FFDDB5 51%, #FFDDB5 75%, #FFCC8F 100%);box-shadow: 0px 4px 0px 0px #B69369;border-radius: 100px;padding: 25px 0;height: 72px;z-index: 20;font-family: Caros, sans-serif;color: #885518;font-weight: 600;font-size: 18px;line-height: 21px;text-align: center;margin-bottom: 10px;}.event__box {display: flex;align-items: end;justify-content: end;gap: 1px;margin-bottom: 21px;color: #C0C0C0;}.event__box p {font-family: Inter, sans-serif;font-weight: 400;font-size: 14px;line-height: 130%;text-align: center;}.event__box img {object-fit: contain;}.event__list__title {text-align: center;font-family: Kuunari, sans-serif;font-weight: 700;font-size: clamp(29px, 9vw, 32px);line-height: 130%;text-align: center;text-transform: uppercase;margin-bottom: 20px;color: black;}.event__list__title span {background: linear-gradient(90deg, #EC2424 0%, #A40000 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;color: transparent;}.event__list {max-width: 335px;width: 100%;position: relative;display: flex;flex-direction: column;gap: 18px;margin-bottom: 20px;}.event__list__item {border: 1.5px solid #A40000;border-radius: 15px;display: flex;align-items: center;justify-content: start;gap: 16px;padding: 9px 0 9px 0;background-color: white;position: relative;}.event__list__box {position: absolute;background-color: white;border-radius: 100px;top: 0px;left: 45px;display: flex;align-items: center;justify-content: center;padding: 3px;overflow: hidden;}.event__list__boxs {position: absolute;background-color: white;border-radius: 100px;bottom: -2px;left: 5px;display: flex;align-items: center;justify-content: center;padding: 3px;}.event__list__boxs p {font-size: 12px;}.event__list__item__number {background: radial-gradient(50% 50% at 50% 50%, #DA2C2C 0%, #A40000 100%);border-radius: 15px;margin-left: -8px;max-width: 69px;width: 100%;padding: 15px 19px 14px;}.event__list__item__number span {font-family: "Big Shoulders Display", sans-serif;font-weight: 700;font-size: 42px;line-height: 100%;text-align: center;text-transform: uppercase;background: linear-gradient(131.77deg, #FFFFFF 27.92%, #B7B7B7 186.56%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;color: transparent;}.event__list__item__text {font-family: Poppins, sans-serif;font-weight: 400;font-size: 16px;line-height: 140%;}.event__list__item__text span {font-weight: 600;}.event__list__img {position: absolute;right: -15px;top: -15px;z-index: 30;}
     </style>
 
     <link rel="stylesheet" href="./css/main.css" media="print" onload="this.media='all'" />
@@ -404,24 +132,31 @@
 
                 <div class="description__box">
                     <div class="description__col">
-                        <img src="./images/percent.avif" loading="lazy" decoding="async" width="36" height="22" alt="images">
-                        <p class="description__col__text">9 yillik tajriba va xalqaro <br> toifadagi CELTA sertifikatiga ega</p>
+                        <img src="./images/percent.avif" loading="lazy" decoding="async" width="36" height="22"
+                            alt="images">
+                        <p class="description__col__text">9 yillik tajriba va xalqaro <br> toifadagi CELTA sertifikatiga
+                            ega</p>
                     </div>
                     <div class="description__col">
-                        <img src="./images/percent.avif" loading="lazy" decoding="async" width="36" height="22" alt="images">
-                        <p class="description__col__text">16 yoshidan buyon IELTS dan 8.0 <br> ball olib o’qituvchilik faoliyatida</p>
+                        <img src="./images/percent.avif" loading="lazy" decoding="async" width="36" height="22"
+                            alt="images">
+                        <p class="description__col__text">16 yoshidan buyon IELTS dan 8.0 <br> ball olib o’qituvchilik
+                            faoliyatida</p>
                     </div>
                     <div class="description__col">
-                        <img src="./images/percent.avif" loading="lazy" decoding="async" width="36" height="22" alt="images">
+                        <img src="./images/percent.avif" loading="lazy" decoding="async" width="36" height="22"
+                            alt="images">
                         <p class="description__col__text">12,000 mingdan ko’p o’quvchilar</p>
                     </div>
                     <div class="description__col">
-                        <img src="./images/percent.avif" loading="lazy" decoding="async" width="36" height="22" alt="images">
+                        <img src="./images/percent.avif" loading="lazy" decoding="async" width="36" height="22"
+                            alt="images">
                         <p class="description__col__text">Ingliz tili bo’yicha 2 ta mashhur <br> kitob muallifi!</p>
                     </div>
-                    <img class="description__images" src="./images/secondSpeaker.avif" loading="lazy" decoding="async" width="339" height="262" alt="speaker">
+                    <img class="description__images" src="./images/secondSpeaker.avif" loading="lazy" decoding="async"
+                        width="339" height="262" alt="speaker">
                 </div>
-                
+
                 <button class="event__btn registerBtn">
                     Ro’yxatdan o’tish
                 </button>
